@@ -1,0 +1,9 @@
+{
+  "name": "kazoo-signage",
+  "version": "1.0.0",
+  "description": "Internal Digital Signage Application",
+  "main": "index.js",
+  "author": "Joe Mainwaring<joe.mainwaring@kazoohr.com>",
+  "license": "MIT",
+  "private": true
+}
