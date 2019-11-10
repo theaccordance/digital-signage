@@ -1,3 +1,6 @@
 # Kazoo Signage
 ---
-A digital signage application for RaspberryPi hardware, running on BalenaCloud
+
+A Digital Signage Solution for teams.  Open Source.  Searverless.  Continuously delivered.
+
+

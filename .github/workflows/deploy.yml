@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  balena-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: fetch latest from submodules
+          run: git submodule foreach git pull origin master
+      - uses: actions/setup-node@v1.1.0
+      - uses: theaccordance/balena-push@master
+        with:
+          api-token: ${{secrets.BALENA_API_TOKEN}}
+          application-name: ${{secrets.BALENA_APPLICATION_NAME}}
