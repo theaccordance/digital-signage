@@ -18,6 +18,7 @@ jobs:
           api-token: ${{secrets.BALENA_API_TOKEN}}
           application-name: ${{secrets.BALENA_APPLICATION_NAME}}
           application-path: "./balena-wpe"
+          enable-debug: 1
 
 #  balena-push-steps:
 #    runs-on: ubuntu-latest
