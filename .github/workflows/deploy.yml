@@ -10,10 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: git submodule foreach git pull origin master
+      - name: "Fetch latest from submodules"
+        run: git submodule foreach git pull origin master
       - uses: actions/setup-node@v1.1.0
-      - run: npm install -g balena-cli
       - uses: theaccordance/balena-push@master
         with:
           api-token: ${{secrets.BALENA_API_TOKEN}}
           application-name: ${{secrets.BALENA_APPLICATION_NAME}}
+          application-path: "./balena-wpe"
+
+#  balena-push-steps:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v1
+#      - name: "Fetch latest from submodules"
+#        run: git submodule foreach git pull origin master
+#      - uses: actions/setup-node@v1.1.0
+#      - name: "Install Balena CLI"
+#        run: npm install -g balena-cli
+#      - name: "Establish Session with BalenaCloud"
+#        run: balena login --token ${{secrets.BALENA_API_TOKEN}}
+#      - name: "Push application to BalenaCloud"
+#        run: cd balena-wpe && balena push ${{secrets.BALENA_APPLICATION_NAME}}
